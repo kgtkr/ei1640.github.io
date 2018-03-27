@@ -1,0 +1,251 @@
+<html>
+  <head>
+    
+    <meta charset = "UTF-8">
+
+    <link rel = "stylesheet" type = "text/css" href = "./../default.css">
+    <link rel = "stylesheet" type = "text/css" href = "./sourceBox.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> 
+
+  </head>  
+  <body>
+
+  <h2>繰り返しの処理</h2> 
+
+  <p>
+  今回は二つ目の制御構造、「反復構造」を学習していくよ!!
+  </p>
+
+  <p>
+  「反復」とは、「繰り返し」という意味だね。<br>
+  この「繰り返し」ができるようになるだけで、解ける問題の幅がとても広がるよ!!<br>
+  でも、ここまでで学習した、「条件式」の知識も使っていくから、そこが不安な人は前の項目に戻って、復習してみてね。
+  </p>
+
+  <p>
+  前回、「反復構造」の説明で「〜の間、こうする」って言ったね。<br>
+  早速、プログラムで書いてみよう!!
+  </p>
+
+  <pre><code class = "prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
+int main(){
+  // 変数宣言
+  int n;
+  
+  // 値の代入
+  n = 10;
+
+  // 繰り返し
+  while(n &gt;= 0){
+    // 処理
+    printf("%d\n", n);
+    n = n - 1;
+  } 
+
+  return(0); 
+}</code></pre>
+
+  <p>
+  実行もできたかな？ ソースを読んでいくよ。<br>
+  どうやら、繰り返しには「<code>while</code>」を使うみたいだね。<br>
+  「<code>while</code>」の後にある()の中は、「<code>if</code>」の時と同じ、「条件式」だよ。<br>
+  今回の場合は、「nが0以上の間」ってことになるね。<br>
+  条件式を見て、当てはまっていなかったら、{}の中は1度も実行されないよ。
+  </p>
+  
+  <p>
+  じゃあ、処理はどんなことをしているのかな？ 2つあるね。上から見ていこう。<br>
+  1つ目は、「<code>printf</code>」だね。これで、「現在のnの値」を出力しているみたい。<br>
+  2つ目は、演算をしているみたいだね。<br>
+  nに、nから1引いたものを代入しているね。つまり、nを1減らしているんだね。
+  </p>
+
+  <p>
+  {}の中の処理を終えたら、どうなるのだろう。<br>
+  正解は、「<code>while</code>の行に戻る」だよ。<br>
+  戻って、まずは「条件式の確認」をするよ。当てはまっているかどうかをもう一度調べるんだ。<br>
+  当てはまっていなかったら、ループを抜けて、{}の後ろの処理に移るよ。<br>
+  当てはまっていたら、処理をもう一度繰り返すよ。わかりやすく、図にしてみたよ。<br>
+  </p>
+
+  <img src="./image/while-1.png" width = "500"><br>
+
+  <p>
+  今回の繰り返し処理は、nを1ずつ減らしているから、「10, 9, 8, 7...」ってnの値が小さくなっていって、最終的には0未満になるから、条件式が偽になってループが終了するね。<br>
+  でも、例えば「<code>1 == 1</code>」のように、必ず真になる条件式を入れた場合、無限ループをしてしまうね。<br>
+  もっというと、実は「真は0以外の数」「偽は0」と定義されているから、「<code>while(1)</code>」だけでも、無限ループを生み出すことが可能だよ。
+  </p>
+
+
+  <pre><code class = "prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
+int main(){
+
+  // 無限ループ
+  while(1){
+    printf("Hello World!\n");    
+  }
+  
+  return(0);
+}</code></pre>
+
+  <p>
+  上のソースは、無限に「<code>Hello World!</code>」と出力し続けてしまうよ。<br>
+  永遠に終わらないから、実行するときは気をつけてね…(遅い)<br>
+  また、「無理やりループを抜ける」という方法もあるよ。<br>
+  </p>
+
+  <pre><code class = "prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
+int main(){
+  // 変数の宣言
+  int n;
+  
+  // ループ
+  while(1){
+    // 処理
+   
+    // 入力
+    scanf("%d", n);
+    
+    // 無理やり抜ける
+    if(n == 0){
+      break;
+    } 
+  }
+
+  return(0);
+}</code></pre>
+
+  <p>
+  「<code>break</code>」を上のソースのように使うと、ループを抜けることができるよ。<br>
+  if文の条件式に当てはまると、break文が実行されるから、入力で0が入力されたらループが終了する、というプログラムだということがわかるね!!<br>
+  でも、今回の場合は「<code>break</code>」を使わないで書くことができるよ。
+  <p>
+
+  <pre><code class = "prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
+int main(){
+  // 変数宣言
+  int n;
+
+  // 1回目の入力だけ、whileの前で受け付ける
+  scanf("%d", &amp;n);
+  
+  // ループ
+  while(n == 0){
+    // 処理
+    scanf("%d", &amp;n);
+  } 
+
+  return(0);
+}</code></pre>
+
+  <p>
+  この書き方だと、ループ内の処理を1回だけループ前に行なっているね。<br>
+  もしも、「ループの1回目だけ条件文を確認せずに、中の処理を実行する」ということができたら、もっと綺麗に書くことができそうだね<br>
+  実は、そういう処理をしてくれるものがあるんだ。下の方で詳しく紹介するよ。
+  </p>
+
+  <p>
+  また、こんなこともできるよ。
+  </p>
+
+  <pre><code class = "prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
+int main(){
+  // 変数宣言
+  int n;
+
+  scanf("%d", &amp;n);
+
+  // ループ
+  while(n &gt;= 0){
+    // 処理
+    if(n%2 == 1){
+      n = n - 3;
+      continue;
+    }
+
+    n = n - 1;
+  }
+
+  return(0);
+}</code></pre>
+  
+  <p>
+  また新しいもの、「<code>continue</code>」が出てきたね。<br>
+  これは「<code>break</code>」に似ていて、処理をそこでストップするところまでは一緒なんだ。<br>
+  でも、ループは抜けないで、条件式のところに戻ってくるんだよ。「処理を飛ばす」っていうとわかりやすいかも。<br>
+  競プロでは、たまにこれを使うと便利なことがあるから、覚えておくといいかも。
+  </p>
+
+ 
+  
+  <h2>do-while文</h2>
+  
+  <p>
+  ここからは少し難易度が高いから、「<code>while</code>」が分かってから読むといいかも。<br>
+  これが分からなくても、下の問題は解けるから、是非チャレンジしてみてね。
+  </p>  
+
+  <p>
+  whileのお話の途中で、「ループの1回目だけ条件文を確認せずに、中の処理を実行する」って話が出てきたね。<br>
+  それを実現するのが、「do-while文」だよ。<br>
+  </p>
+  
+  <p>
+  動作はなんとなく分かってそうだから、早速ソースを書いていこう。
+  </p>
+
+  <pre><code class = "prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
+int main(){
+  // 変数宣言
+  int n;
+
+  // ループ
+  do{
+    // 処理
+    scanf("%d", &amp;n);
+  }while(n != 0);
+
+  return(0);
+}</code></pre>
+
+  <p>
+  上で紹介した、「ゼロが入力されるまでの間、続ける」という処理をしているよ。<br>
+  でも、さっき紹介した時に使ったif文の条件式と、今使っているdo-while文の条件式が違うね。<br>
+  これは、条件式がちゃんと分かってればすぐわかることだけど、最初のうちは難しいかも。<br>
+  <p>
+
+  <p>
+  if文は「終了するときの条件」を書いたのに対して、do-while文は「続けるときの条件」を書いている。<br>
+  「反対の条件」になっているんだ。<br>
+  「<code>!=</code>」と「<code>==</code>」は逆の意味を持っているから、こうなったんだね。
+  </p>
+
+  <p>
+  回り道をしてしまったけれど、do-while文の説明をしていこう。<br>
+  さっきも説明したけれど、do-while文の特徴は、「1回目は無条件で処理を実行する」という部分だ。<br>
+  つまり、処理が「必ず1回実行される」ということになる。<br>
+  while文との大きな違いはそこだね。<br>
+  競プロで、たまにdo-while文を使う方が良い問題が出るかな？くらいの頻度なので、覚えていなくても困ることはないと思う。<br>
+  でも、知識はあるに越したことはないから、余裕があれば覚えておこうね。<br>
+  </p>
+
+  <img src="./image/while-2.png" width = "500"><br>
+  
+  <h2>問題コーナー</h2>
+  
+  <p> 
+  今回は、whileを使えば解ける問題を集めてみたよ。<br>
+  使ってみなきゃ慣れていかないから、頑張っていこう!!
+  </p>
+  
+  <a href = "https://hoj.hamako-ths.ed.jp/onlinejudge/problems/406" target = "_blank">406 桃太郎伝説</a><br>
+  <a href = "https://hoj.hamako-ths.ed.jp/onlinejudge/problems/524" target = "_blank">524 10人の抜き打ち</a><br>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  </body>
+</html>

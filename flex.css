@@ -1,0 +1,11 @@
+div{
+      display: flex;
+}
+
+aside{
+  width: 200px;
+}
+
+main{
+  flex: 1;
+}
