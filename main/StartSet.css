@@ -22,3 +22,15 @@
   margin: 10px;
   padding: 10px; 
 }
+
+#con{
+  display: flex;
+}
+
+#side{
+  width:300px;
+}
+
+#main{
+  flex:1;
+}

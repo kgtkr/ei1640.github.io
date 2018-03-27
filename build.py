@@ -24,7 +24,7 @@ def build(dir):
             if ext == ".html":
                 [title, main] = open(pathFullMain).read().split("\n", 1)
                 html = template.replace(
-                    "{{title}}", title).replace('{{main}}', main)
+                    "{{title}}", title).replace('{{main}}', main).replace('{{root}}', "../"*(len(dir.split("/"))-1))
                 open(pathFullDist, 'a').write(html)
             else:
                 shutil.copy(pathFullMain, pathFullDist)
