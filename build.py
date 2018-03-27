@@ -21,7 +21,7 @@ def build(dir):
             build(dir+"/"+path)
         else:
             _, ext = os.path.splitext(pathFullMain)
-            if ext == "html":
+            if ext == ".html":
                 [title, main] = open(pathFullMain).read().split("\n", 1)
                 html = template.replace(
                     "{{title}}", title).replace('{{main}}', main)
