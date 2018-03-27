@@ -1,28 +1,17 @@
-<html>
-  <head>
-    
-    <meta charset = "UTF-8">
+演算
+<h2>演算</h2>
+<p>
+  前回、変数の作り方と出力の仕方を勉強したね!!
+  <br> 今回は、演算のことを学習するよ!!
+</p>
 
-    <link rel = "stylesheet" type = "text/css" href = "./../default.css">
-    <link rel = "stylesheet" type = "text/css" href = "./sourceBox.css">
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> 
+<p>
+  変数は、数字や文字を入れる「箱」って説明したね。
+  <br> 数学では、その変数を使って、足し算したり、引き算したり…ってしたことがあると思う。
+  <br> プログラミングでも、同じように、足し算したり、引き算したり…することができるんだ。
+</p>
 
-  </head>  
-  <body>
-
-  <h2>演算</h2> 
-  <p>
-  前回、変数の作り方と出力の仕方を勉強したね!!<br>
-  今回は、演算のことを学習するよ!!
-  </p>  
-
-  <p>
-  変数は、数字や文字を入れる「箱」って説明したね。<br>
-  数学では、その変数を使って、足し算したり、引き算したり…ってしたことがあると思う。<br>
-  プログラミングでも、同じように、足し算したり、引き算したり…することができるんだ。
-  </p>
-
-  <pre><code class="prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
+<pre><code class="prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
 int main(){
   // 変数の宣言
   int a = 10;
@@ -50,18 +39,23 @@ int main(){
   
   return(0);
 }</code></pre>
-  
-  <p>
-  ソースコードにコメントで書いてある通り、四則演算とあまりを求めることができるよ!!<br>
-  掛け算と割り算だけ、「<code>*</code>」と「<code>/</code>」を使うから、気をつけてね。<br>
-  </p>
 
-  <p>
-  「<code>%</code>」であまりを求めることができるのは、プログラミング特有だね。<br>
-  最初のうちはあまり使わないかもしれないけれど、少し難しい問題になるとよく使うから覚えておこうね!!<br>
-  </p>
+<p>
+  ソースコードにコメントで書いてある通り、四則演算とあまりを求めることができるよ!!
+  <br> 掛け算と割り算だけ、「
+  <code>*</code>」と「
+  <code>/</code>」を使うから、気をつけてね。
+  <br>
+</p>
 
-  <pre><code class="prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
+<p>
+  「
+  <code>%</code>」であまりを求めることができるのは、プログラミング特有だね。
+  <br> 最初のうちはあまり使わないかもしれないけれど、少し難しい問題になるとよく使うから覚えておこうね!!
+  <br>
+</p>
+
+<pre><code class="prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
 int main(){
   // 変数の宣言
   int a,b;
@@ -91,11 +85,12 @@ int main(){
   return(0);
 }</code></pre>
 
-  <p>
-  プログラム特有の書き方もあるよ。<br>
-  </p>
+<p>
+  プログラム特有の書き方もあるよ。
+  <br>
+</p>
 
-  <pre><code class="prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
+<pre><code class="prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
 int main(){
   // 変数の宣言
   int a;
@@ -121,15 +116,15 @@ int main(){
 
   return(0);
 }</code></pre>
- 
-  <h2>割り算について</h2>
-  
-  <p>
-  プログラミングにおいての割り算は、型によって少し変わるんだ。<br>
-  例えば、「整数」を扱う型を 使って、割り切ることのできない演算をすると、どうなるだろうか。
-  </p>
-  
-  <pre><code class="prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
+
+<h2>割り算について</h2>
+
+<p>
+  プログラミングにおいての割り算は、型によって少し変わるんだ。
+  <br> 例えば、「整数」を扱う型を 使って、割り切ることのできない演算をすると、どうなるだろうか。
+</p>
+
+<pre><code class="prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
 int main(){
   // 変数の宣言
   int a;
@@ -145,16 +140,17 @@ int main(){
   return(0);
 }</code></pre>
 
-  <p>
-  割り切れるものは正しく表示できたが、割り切れないものは、あまりを無視して整数で表現できる数が表示されたと思う。<br>
-  このように、整数での割り算は、正しい値にはならないので、気をつけていこう。<br>
-  </p>
-  
-  <p>
+<p>
+  割り切れるものは正しく表示できたが、割り切れないものは、あまりを無視して整数で表現できる数が表示されたと思う。
+  <br> このように、整数での割り算は、正しい値にはならないので、気をつけていこう。
+  <br>
+</p>
+
+<p>
   実数を扱うことのできる型を使えば、小数点以下の数も表示されるよ。
-  </p>
-  
-  <pre><code class="prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
+</p>
+
+<pre><code class="prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
 int main(){
   // 変数の宣言
   double a, b, c;
@@ -170,16 +166,17 @@ int main(){
   return(0);   
 }</code></pre>
 
-  <h2>キャスト</h2>
-  
-  <p>
-  int型の変数とdouble型の変数で、演算はできると思う？<br>
-  答えは、「できるけど、そのままではできない」って感じかな。<br>
-  「キャスト」というものを使えば、違う型の変数同士で演算することができるよ!!<br>
-  </p>
-  
-   
-  <pre><code class="prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
+<h2>キャスト</h2>
+
+<p>
+  int型の変数とdouble型の変数で、演算はできると思う？
+  <br> 答えは、「できるけど、そのままではできない」って感じかな。
+  <br> 「キャスト」というものを使えば、違う型の変数同士で演算することができるよ!!
+  <br>
+</p>
+
+
+<pre><code class="prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
 int main(){
   // 変数の宣言
   int a;
@@ -198,18 +195,16 @@ int main(){
   return(0);
 }</code></pre>
 
-  <p>
-  12行目で使われているものが「キャスト」だよ。<br>
-  ()の中に、どの型に変換したいかを記述してあげるだけで、その後ろにある変数、ソースコードの中で言えば「<code>a</code>」の型が変わるよ。
-  </p>
+<p>
+  12行目で使われているものが「キャスト」だよ。
+  <br> ()の中に、どの型に変換したいかを記述してあげるだけで、その後ろにある変数、ソースコードの中で言えば「
+  <code>a</code>」の型が変わるよ。
+</p>
 
-   
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
- 
-  </body>
-</html>
+
+<br>
+<br>
+<br>
+<br>
+<br>

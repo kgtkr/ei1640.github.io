@@ -1,46 +1,54 @@
-<html>
-  <head>
-    
-    <meta charset = "UTF-8">
+HelloWorld
+<h2>プログラミングを始めよう!!</h2>
+<p>「プログラミング」って、どんなイメージがあるかな？
+  <br> 難しいイメージを持ってる人もいるかもしれないし、簡単だと思っている人もいるかもしれないね。
+</p>
+<p>ここでは、「競技プログラミング」を始めるための、プログラミングの基本を、Hamako Online Judge(通称HOJ)と、C言語やC++を使って学んでいくよ!!</p>
+<p>まず初めに、「Hello World!」って出力(表示)してみよう!!</p>
 
-    <link rel = "stylesheet" type = "text/css" href = "./../default.css">
-    <link rel = "stylesheet" type = "text/css" href = "./sourceBox.css">
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> 
-
-  </head>  
-  <body>
-
-  <h2>プログラミングを始めよう!!</h2> 
-  <p>「プログラミング」って、どんなイメージがあるかな？<br>
-  難しいイメージを持ってる人もいるかもしれないし、簡単だと思っている人もいるかもしれないね。</p>
-  <p>ここでは、「競技プログラミング」を始めるための、プログラミングの基本を、Hamako Online Judge(通称HOJ)と、C言語やC++を使って学んでいくよ!!</p>
-  <p>まず初めに、「Hello World!」って出力(表示)してみよう!!</p>
- 
-  <pre><code class="prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
+<pre><code class="prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
 int main(){
   printf("Hello World!\n");    
   return(0);
 }</code></pre>
-  
-  <p>出力できたかな?</p>
-  <p>どうして出力できたのか、予想してみよう。ソース内で「<code>Hello World!</code>」の記述があるのは、3行目だけだね。「<code>printf</code>」を使うと、「<code>Hello World!</code>」って出力ができるみたい。</p>   
-  <p>確認のために、「<code>Hello World!</code>」の文字を変えて実行してみよう!!<br>
-  予想通りの出力になったかな?</p>
-  <p>次に、「<code>Hello World!</code>」の後にある、「<code>\n</code>」の意味を考えてみよう。<br>
-  これは「改行」を意味するものだよ。 競プロでは毎回使うので、覚えていこう。<br>
-  「<code>printf</code>」は、「<code>"</code>」の間にある文字を出力してくれる「関数」なんだ。関数については、別のところで詳しくやるから、今はそういう名前なんだって覚えておいてね。</p>
-  <p>「<code>printf</code>」や「<code>return(0)</code>」の後にある「<code>;</code>」はなんだろう?<br>
-  これは、日本語でいうと「。」のような役割で、「文章の終わりにつけるもの」みたいな感じだよ。<br>
-  今後、色々な命令を学習する時にも、最後に「<code>;</code>」がついていることが多いから、覚えておこうね。</p>
-  <p>では、3行目以外のプログラムについて考えてみよう…って言いたいところだけど、まだ難しいので、「プログラムを書くときのおまじない」って思っててね。</p> 
-  <p>ここまでできたら、HOJの<a href = "https://hoj.hamako-ths.ed.jp/onlinejudge/problems/1" target = "_brank", style = "text-decoration:none;">「001 Hello World!」</a>が解けるよ!</p> 
-  <h2>コメント</h2>
-  <p>最後に１つ、ソースの中に、「コメント」を記述できる、ってことは覚えておこう。<br>  
-  「<code>//</code>」って書くと、その行の「<code>//</code>」以降の文字は全部コメントになるよ。<br>
-  「<code>/*</code>」と「<code>*/</code>」で囲むと、囲んだ範囲だけ、コメントになるよ。</p>
-  <p>コメントは、ソースの中に記述しても動作には影響を及ぼさないので、積極的に利用していこう。特に、長いプログラムを書くときは、どこで何をしているか、ソースを読まなくてもわかるように、コメントで記述しておくといいね!!</p>
 
-  <pre><code class="prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
+<p>出力できたかな?</p>
+<p>どうして出力できたのか、予想してみよう。ソース内で「
+  <code>Hello World!</code>」の記述があるのは、3行目だけだね。「
+  <code>printf</code>」を使うと、「
+  <code>Hello World!</code>」って出力ができるみたい。</p>
+<p>確認のために、「
+  <code>Hello World!</code>」の文字を変えて実行してみよう!!
+  <br> 予想通りの出力になったかな?
+</p>
+<p>次に、「
+  <code>Hello World!</code>」の後にある、「
+  <code>\n</code>」の意味を考えてみよう。
+  <br> これは「改行」を意味するものだよ。 競プロでは毎回使うので、覚えていこう。
+  <br> 「
+  <code>printf</code>」は、「
+  <code>"</code>」の間にある文字を出力してくれる「関数」なんだ。関数については、別のところで詳しくやるから、今はそういう名前なんだって覚えておいてね。</p>
+<p>「
+  <code>printf</code>」や「
+  <code>return(0)</code>」の後にある「
+  <code>;</code>」はなんだろう?
+  <br> これは、日本語でいうと「。」のような役割で、「文章の終わりにつけるもの」みたいな感じだよ。
+  <br> 今後、色々な命令を学習する時にも、最後に「
+  <code>;</code>」がついていることが多いから、覚えておこうね。</p>
+<p>では、3行目以外のプログラムについて考えてみよう…って言いたいところだけど、まだ難しいので、「プログラムを書くときのおまじない」って思っててね。</p>
+<p>ここまでできたら、HOJの
+  <a href="https://hoj.hamako-ths.ed.jp/onlinejudge/problems/1" target="_brank" , style="text-decoration:none;">「001 Hello World!」</a>が解けるよ!</p>
+<h2>コメント</h2>
+<p>最後に１つ、ソースの中に、「コメント」を記述できる、ってことは覚えておこう。
+  <br> 「
+  <code>//</code>」って書くと、その行の「
+  <code>//</code>」以降の文字は全部コメントになるよ。
+  <br> 「
+  <code>/*</code>」と「
+  <code>*/</code>」で囲むと、囲んだ範囲だけ、コメントになるよ。</p>
+<p>コメントは、ソースの中に記述しても動作には影響を及ぼさないので、積極的に利用していこう。特に、長いプログラムを書くときは、どこで何をしているか、ソースを読まなくてもわかるように、コメントで記述しておくといいね!!</p>
+
+<pre><code class="prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
 int main(){
   printf("Hello World!\n"); // これはコメントです
   /* これもコメントです */
@@ -51,11 +59,8 @@ int main(){
   return(0);
 }</code></pre>
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  
-  </body>
-</html>
+<br>
+<br>
+<br>
+<br>
+<br>
