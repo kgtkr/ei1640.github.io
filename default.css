@@ -1,10 +1,10 @@
-/* ¼ç¤ÊÊ¸¾Ï */
+/* ä¸»ãªæ–‡ç«  */
 p{
   font-size: 15;
   color: #494949;
 }
 
-/* ¸«½Ğ¤· */
+/* è¦‹å‡ºã— */
 h1{
   padding: 0.4em 0.5em;
   color: #494949;
@@ -28,16 +28,16 @@ h3{
   padding: 0.5em;
 }
 
-/* ¥ê¥ó¥¯Àè */
+/* ãƒªãƒ³ã‚¯å…ˆ */
 a{
   color: skyblue;
   text-decoration: none;
 }
 
-/* ÇØ·Ê */
+/* èƒŒæ™¯ */
 body {
   background: #FFFFFF;
   /*font-family: "Hiragino Kaku Gothic Pro", "Meiryo";*/
-  font-family: Quicksand, Şâ¥´¥·¥Ã¥¯ÂÎ, "Yu Gothic", YuGothic, "¥Ò¥é¥®¥Î³Ñ¥´¥·¥Ã¥¯ Pro", "Hiragino Kaku Gothic Pro", ¥á¥¤¥ê¥ª, Meiryo, Osaka, "£Í£Ó £Ğ¥´¥·¥Ã¥¯", "MS PGothic", sans-serif;
+  font-family: Quicksand, æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“, "Yu Gothic", YuGothic, "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ã‚·ãƒƒã‚¯ Pro", "Hiragino Kaku Gothic Pro", ãƒ¡ã‚¤ãƒªã‚ª, Meiryo, Osaka, "ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯", "MS PGothic", sans-serif;
 }
 
