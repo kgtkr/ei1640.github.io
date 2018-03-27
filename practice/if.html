@@ -1,0 +1,248 @@
+<html>
+  <head>
+    
+    <meta charset = "UTF-8">
+
+    <link rel = "stylesheet" type = "text/css" href = "./../default.css">
+    <link rel = "stylesheet" type = "text/css" href = "./sourceBox.css">
+    <link rel = "stylesheet" type = "text/css" href = "./table.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> 
+
+  </head>  
+  <body>
+
+  <h2>前置き</h2> 
+  
+  <p>
+  ここまでで、入出力の仕方や、変数の扱いなど、プログラムを書く上での基本的な部分を学習してきたね。<br>
+  今回は、プログラムの重要な動作の1つについて、学習していくよ。
+  </p>
+  
+  <h2>基本的な構造</h2>
+  
+  <p>
+  今更だけれど、プログラムを書く基本について、少し触れてみるよ。<br>
+  過去にダイクストラという人が、「構造化プログラミング」というものを提唱したんだ。<br>
+  全部理解しようとすると長くなってしまうから、興味があったら調べてみてね。<br>
+  </p>
+  
+  <p>
+  構造化プログラミングでは、3つの制御構造しか使わないんだ。<br>
+  「順次構造」「選択構造」「反復構造」の3つだよ。<br>
+  </p>
+  
+  <p>
+  ・順次構造・<br>
+  言葉の意味通り、処理が順番通り、1つずつこなされていくものだよ。<br>
+  今まで書いてきたプログラムは、全部順次構造だね。<br>
+  </p>
+
+  <p>
+  ・選択構造・<br>
+  今回学習するものだよ。<br>
+  「もしも〜だったら、こうする。」という感じの動作だよ。<br>
+  </p>
+
+  <p>
+  ・反復構造・<br>
+  別のところで学習するものだよ。<br>
+  「〜の間、こうする。」という感じの動作だよ。<br>
+  </p> 
+  
+  <p>
+  「プログラミング」って聞くと難しそうだったかもしれないけれど、3つの制御構造しか使わないって言われると、できる気がしてくるね!!
+  </p>
+
+  <h2>if文</h2>
+
+  <p>
+  長くなってしまったけれど、先ほど言った通り、今回は選択構造をやるよ。<br>
+  C言語においては、if文というものが選択構造に当たるよ。
+  </p>
+
+  <p>
+  早速使い方をやっていこう。
+  </p>
+
+  <pre><code class = "prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
+int main(){
+
+  if(/* 条件式 */){
+    // 処理
+  }
+
+  return(0);
+}</code></pre>
+
+  <p>
+  使い方は上の通りだけど、このままでは動かないよ。<br>
+  「条件式」がないと動かないんだ。ここは処理によって色々と変わるよ。<br>
+  </p>
+
+  <p>
+  条件式というのは、それが正しかったら「真」、正しくなかったら「偽」が返ってくるものだよ。<br>
+  「返ってくる」というと分かりづらいから、今は「真または偽になるもの」って思っておいてね。<br>
+  条件式には色々あるよ。それについては、下の方でまとめてあるからみてみてね。<br>
+  </p>
+  
+  <p>
+  if文において、条件式が真だった場合、上記のソースの「// 処理」の部分が実行されるんだ。<br>
+  偽だった場合は、「// 処理」の部分は実行されないで、無視されるよ。
+  </p>
+  
+  <br>
+
+  <p>
+  条件式に当てはまった場合は処理Aをして、当てはまらなかった場合は処理Bをする、なんてこともできるよ。
+  </p>   
+
+  <pre><code class = "prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
+int main(){
+  
+  if(/* 条件式 */){
+    // 処理A
+  } else {
+    // 処理B
+  } 
+
+  return(0);
+}</code></pre>
+
+  <p>
+  このように、「<code>else</code>」を使うことによって、条件式に当てはまった場合、当てはまらなかった場合のように処理を分けることができるよ。<br>
+  また、こんな書き方もできるよ。
+  </p>
+ 
+   <pre><code class = "prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
+int main(){
+  
+  if(/* 条件式 */){
+    // 処理
+  } else if(/* 条件式 */){
+    //処理
+  }
+
+  return(0);
+}</code></pre>
+ 
+  <p>
+  「<code>else</code>」と「<code>if</code>」をつなげることもできるんだね!!<br>
+  これも、競プロで使うことがあるから、覚えておこう。
+  </p>
+
+   
+  <h2>条件式</h2>
+  
+  <p>
+  ここまでで、「if文」というものはわかったけど、「条件式」が分からなかったから、実際に動かしてみることができなかったね。<br>
+  条件式を学習して、「if文」を使ってみよう!!
+  </p>
+  
+  <p>
+  条件式は色々あるから、よく使うものだけまとめてみたよ。<br>
+  直感的に分かるものから、プログラミング特有のものまであるけれど、最低限ここにあるものは覚えておくといいよ。<br>
+  条件式を考えるのが苦手な人もいるかもしれないけれど、ゆっくり慣れていけばいいから大丈夫!!<br>
+  if文が使えるだけで、解ける問題の幅が広がるから、頑張ってみよう。
+  </p>  
+  
+  <table>
+    <tr style = "background: #BEFFBE">
+      <td>演算子</td>
+      <td><center>意味</center></td>
+    </tr>
+    
+    <tr>
+      <td><center>&lt;</center></td>
+      <td>
+      数学と同じように、大小の比較で使うよ。<br>
+      右が左より大きかったら、真を返すよ。
+      </td>
+    </tr>
+    
+    <tr>
+      <td><center>&gt;</center></td>
+      <td>
+      数学と同じように、大小の比較で使うよ。<br>
+      右が左より小さかったら、真を返すよ。
+      </td>
+    </tr>
+  
+    <tr>
+      <td><center>&lt;=</center></td>
+      <td>
+      これも、大小の比較で使うものだよ。<br>
+      右が左以上だったら、真を返すよ。その数を含むか含まないかの違いだね。
+      </td>
+    </tr>
+    
+    <tr>
+      <td><center>&gt;=</center></td>
+      <td>
+      これも、大小の比較で使うものだよ。<br>
+      右が左以下だったら、真を返すよ。その数を含むか含まないかの違いだね。
+      </td>
+    </tr>
+    
+    <tr>
+      <td><center>==</center></td>
+      <td>
+      右と左が等しかったら、真を返すよ。
+      </td>
+    </tr>
+
+    <tr>
+      <td><center>!=</center></td>
+      <td>
+      右と左が違ったら、真を返すよ。
+      </td>
+    </tr>
+
+  </table>  
+              
+  <p>
+  条件式を使ってみると、こんな感じのソースが書けるようになるね!!
+  </p>
+
+  <pre><code class = "prettyprint lang-cl linenums">#include &lt;stdio.h&gt;
+int main(){
+  // 変数の宣言
+  int a, b;
+  
+  // 変数の入力
+  scanf("%d %d", &amp;a, &amp;b);
+
+  // 比較
+  if(a &gt; b){
+    // aがbより大きい
+    printf("最初に入力された数が大きいです。\n");
+  } else if(a &lt; b){
+    // aがbより小さい
+    printf("二番目に入力された数が大きいです。\n");
+  } else if(a == b){
+    // aとbが等しい
+    printf("二つの数は等しいです。\n");
+  }
+  
+  return(0);
+}</code></pre>
+  
+  <h2>問題コーナー</h2>
+  
+  <p>
+  前回に引き続き、HOJから出題していくよ。<br>
+  分からなくても、条件式は使えば慣れていくものだから、頑張っていこう＞＜
+  </p>
+
+  <a href = "https://hoj.hamako-ths.ed.jp/onlinejudge/problems/439" target = "_blank">439 売り上げ個数 </a><br>
+  <a href = "https://hoj.hamako-ths.ed.jp/onlinejudge/problems/686" target = "_blank">686 プリン </a><br>
+  <a href = "https://hoj.hamako-ths.ed.jp/onlinejudge/problems/718" target = "_blank">718 ポテチの洗浄 </a><br>
+  <a href = "https://hoj.hamako-ths.ed.jp/onlinejudge/problems/771" target = "_blank">771 眠れる獅子の油断 </a><br>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  
+  </body>
+</html>
